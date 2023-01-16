@@ -23,11 +23,11 @@ https.get('https://en.wikipedia.org/w/api.php?action=query&format=json&list=sear
 	                        });
 
 function apiprint(){
-	if (JSON.stringify.length >1){
+	if (JSON.stringify(response).length >2){
 
 	
 console.log(JSON.stringify(response));
-console.log("test for async");
+console.log("test for async1");
 }else{
 	console.log("test for async");
 	setTimeout(apiprint,200);
