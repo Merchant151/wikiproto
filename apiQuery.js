@@ -1,5 +1,7 @@
 const https = require('https');
 
+var response = "";
+
 https.get('https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&formatversion=2&srsearch=Honda', (resp) => {
 	  let data = '';
 	
@@ -10,11 +12,25 @@ https.get('https://en.wikipedia.org/w/api.php?action=query&format=json&list=sear
 	
 	              // The whole response has been received. Print out the result.
 	                resp.on('end', () => {
-	                    console.log(JSON.stringify(JSON.parse(data)));
+	                   console.log("I am running");
+				//console.log(JSON.stringify(JSON.parse(data)));
+			    response = JSON.parse(data);
+			    //console.log(JSON.stringify(response));
 	                      });
 	
 	                      }).on("error", (err) => {
 	                        console.log("Error: " + err.message);
 	                        });
 
+function apiprint(){
+	if (JSON.stringify.length >1){
 
+	
+console.log(JSON.stringify(response));
+console.log("test for async");
+}else{
+	console.log("test for async");
+	setTimeout(apiprint,200);
+}
+}
+apiprint();
