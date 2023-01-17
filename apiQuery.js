@@ -1,6 +1,7 @@
 const https = require('https');
 
 var response = "";
+var search = "";
 
 https.get('https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&formatversion=2&srsearch=Honda', (resp) => {
 	  let data = '';
@@ -24,13 +25,16 @@ https.get('https://en.wikipedia.org/w/api.php?action=query&format=json&list=sear
 
 function apiprint(){
 	if (JSON.stringify(response).length >2){
-
-	
-console.log(JSON.stringify(response));
-console.log("test for async1");
-}else{
-	console.log("test for async");
-	setTimeout(apiprint,200);
-}
+		//console.log(JSON.stringify(response));
+		console.log("test for async1");
+		//console.log(response);
+		//console.log(response.query);//this works
+		//console.log(response.query.search);//this works 
+		search = response.query.search;
+		console.log(search[0]);
+	}else{
+		console.log("test for async");
+		setTimeout(apiprint,200);
+	}
 }
 apiprint();
