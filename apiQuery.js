@@ -73,7 +73,7 @@ var con;
 function connect(){
 	const cred = file.split("\n");
 	//testing file thingz
-	console.log(cred[0]);
+	//console.log(cred[0]);
 	con = mysql.createConnection({
 		host: cred[0],
 		user: cred[1],
@@ -83,12 +83,15 @@ function connect(){
 	con.connect((err) => {
 		if (err) throw err;
 		console.log("Connected!");
+         
+		console.log('connected as id ' + con.threadId);
+		//end connection
+		//ended connection so the script will stop
+		con.end();
 	});
-
-	console.log(cred);
 }
 //console.log("I am running now");
 const redic = function(){
 	console.log("read print \n" + file);
 }
-setTimeout(redic,2500); //wtf
+//setTimeout(redic,2500); //wtf
