@@ -72,10 +72,12 @@ read(connect);
 var con;
 function connect(){
 	const cred = file.split("\n");
+	//testing file thingz
+	console.log(cred[0]);
 	con = mysql.createConnection({
-		host: file[0],
-		user: file[1],
-		password: file[2],
+		host: cred[0],
+		user: cred[1],
+		password: cred[2],
 		database: "helloWorld"
 	});
 	con.connect((err) => {
