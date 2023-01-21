@@ -1,0 +1,24 @@
+{
+  "name": "wikiproto",
+  "version": "1.0.0",
+  "description": "api project prototype",
+  "main": "apiQuery.js",
+  "scripts": {
+    "prestart": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node apiQuery.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Merchant151/wikiproto.git"
+  },
+  "author": "Joshua \"Mart\" Miller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Merchant151/wikiproto/issues"
+  },
+  "homepage": "https://github.com/Merchant151/wikiproto#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
